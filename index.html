@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Organizador de Tarefas</title>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Organizador de Tarefas</h1>
+        <div class="mb-3">
+            <input type="text" id="taskInput" class="form-control" placeholder="Adicione uma nova tarefa">
+            <button onclick="addTask()" class="btn btn-primary">Adicionar Tarefa</button>
+        </div>
+        <div class="mb-3">
+            <div class="btn-group" role="group" aria-label="Filtros">
+                <button type="button" class="btn btn-secondary" onclick="filterTasks('all')">Todas as Tarefas</button>
+                <button type="button" class="btn btn-secondary" onclick="filterTasks('toDo')">Tarefas a Fazer</button>
+                <button type="button" class="btn btn-secondary" onclick="filterTasks('completed')">Concluídas</button>
+            </div>
+        </div>
+        <ul id="taskList" class="list-group"></ul>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmationModalLabel">Confirmação</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja confirmar a exclusão desta tarefa?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeletionBtn">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
