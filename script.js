@@ -139,6 +139,14 @@ function saveTaskOrder() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
+let input = document.getElementById('taskInput');
+
+input.addEventListener('keypress',(event)=>{   /*QUANDO APERTA ENTER DAR O COMANDO*/
+    if(event.key == 'Enter') document.querySelector("body >div > div > button").click();
+})
+
+
+
 // Atualizar a lista de tarefas no carregamento da página
 filterTasks(currentFilter);
 
